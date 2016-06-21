@@ -4,6 +4,7 @@ public class Neural {
 	private double[] inputs;
 	private double[] weights;
 	private double output = -1.00;
+	private Neural[] parents;
 
 	public Neural() {
 		inputs = new double[0];
@@ -15,6 +16,16 @@ public class Neural {
 		this.weights = inputs;
 	}
 
+	public Neural(double[] inputs, double[] weight, Neural[] parents) {
+		this.inputs = inputs;
+		this.weights = inputs;
+		this.parents = parents;
+	}
+	
+	public Neural[] getParents() {
+		return parents;
+	}
+	
 	public double[] getInputs() {
 		return inputs;
 	}
@@ -34,6 +45,10 @@ public class Neural {
 
 	public void setInputs(double[] inputs) {
 		this.inputs = inputs;
+	}
+	
+	public void setParents(Neural[] parents) {
+		this.parents = parents;
 	}
 
 	public void setWeights(double[] weights) {
